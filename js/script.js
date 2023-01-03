@@ -1,4 +1,7 @@
-var argButtonName, buttonTest,  buttonRock,  buttonPaper,  buttonScissors;
+let buttonTest,
+    buttonRock,
+    buttonPaper,
+    buttonScissors;
 
 buttonTest = document.getElementById('button-test');
 buttonRock = document.getElementById('button-rock');
@@ -6,9 +9,9 @@ buttonPaper = document.getElementById('button-paper');
 buttonScissors = document.getElementById('button-scissors');
 
 
-function buttonClicked(playerMove) {
-  clearMessages();
-  console.log(playerMove + ' został kliknięty');
+function buttonClicked(argPlayerMove) {
+    clearMessages();
+    console.log(argPlayerMove + ' został kliknięty');
 
     function printMessage(msg){
         var div = document.createElement('div');
@@ -20,12 +23,13 @@ function buttonClicked(playerMove) {
         document.getElementById('messages').innerHTML = '';
     };
 
-    var argComputerMove, computerMove, playerMove, randomNumber;
+    let playerMove,
+        computerMove, 
+        randomNumber;
 
-    playerMove = getMoveName(playerMove);
+    playerMove = getMoveName(argPlayerMove);
     randomNumber = Math.floor(Math.random() * 3 + 1);
-    argComputerMove = randomNumber;
-    computerMove = getMoveName(argComputerMove);
+    computerMove = getMoveName(randomNumber);
 
     function getMoveName(argMoveId) {
         console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
